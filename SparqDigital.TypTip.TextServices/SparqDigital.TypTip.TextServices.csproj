@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AzureFunctionsVersion>v2</AzureFunctionsVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="EndPointKeepWarm.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.2.0" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.26" />
+    <PackageReference Include="StackExchange.Redis" Version="2.0.571" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+    <PackageReference Include="Willezone.Azure.WebJobs.Extensions.DependencyInjection" Version="1.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SparqDigital.TypTip.Data\SparqDigital.TypTip.Core.Data.csproj" />
+    <ProjectReference Include="..\SparqDigital.TypTip.Server.Common\SparqDigital.TypTip.Server.Common.csproj" />
+    <ProjectReference Include="..\SparqDigital.TypTip.Server.Infrastructure\SparqDigital.TypTip.Server.Infrastructure.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="extensions.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="host.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="local.settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+</Project>
